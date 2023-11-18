@@ -1,0 +1,35 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-G">
+            <div class="card">
+                <div class="text-center">
+                    <h1>Login</h1>
+                    <h6>please enter email $ password !!</h6>
+                </div>
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                    
+                    <div class="mb-3">
+                        <label for="formGroupExampleInput" class="form-label">Email</label>
+                        <input formControlName="emailadd" type="email" class="form-control" id="formGroupExampleInput" >
+						<small *ngIf="loginForm.controls['emailadd'].invalid">*Email is Required !</small>
+						
+                      </div>
+                      <div class="mb-3">
+                        <label for="formGroupExampleInput2" class="form-label">Password</label>
+                        <input formControlName="loginpassword" type="password" class="form-control" id="formGroupExampleInput2" >
+						<small >*Password is Required !</small>
+						<!-- *ngIf="loginForm.get('loginpassword').invalid" -->
+                      </div>
+					  <div>
+						<div class="error">{{errorMsg}}</div>
+                      <button type="submit" class="btn btn-primary" value="submit">Login</button>
+					</div>
+
+                </form>
+				
+                    
+            </div>
+        </div>
+    </div>
+</div>
